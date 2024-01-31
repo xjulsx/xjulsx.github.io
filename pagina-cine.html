@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cita de San Valentín en el Cine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        p {
+            font-size: 18px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>que bien que elegiste... jejeje</h1>
+    <img src="gatitobailando.gif" alt="GIF de celebración">
+    <p>si me quieres... pulsa aquí abajo</p>
+    <button id="love-btn" onclick="showLoveMessage()">cuidado....</button>
+    <div id="love-message"></div>
+
+    <script>
+        function showLoveMessage() {
+            const loveMessageDiv = document.getElementById('love-message');
+            loveMessageDiv.innerHTML = '<p>del uno al <input type="number" id="love-number" min="1" max="100" placeholder="cuánto?"> me quieres? :p </p>' +
+                                      '<button onclick="redirectToCitaCine()">puedes clickar aquí pero yo te quiero más</button>';
+        }
+
+        function redirectToCitaCine() {
+            const loveNumber = document.getElementById('love-number').value;
+            if (loveNumber) {
+                window.location.href = 'cita-cine.html?love=' + encodeURIComponent(loveNumber);
+            }
+        }
+    </script>
+</body>
+</html>

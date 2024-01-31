@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cita en el Cine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        p {
+            font-size: 18px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #response-message {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>gracias por querer celebrarlo conmigo.. <4</h1>
+    <p>nos vamos al cine?</p>
+    <img src="gatitocine.jpg" alt="gatitocine" width="350">
+
+    <form id="cinema-form" action="mailto:julenepj@gmail.com" method="post" enctype="text/plain">
+        <label for="date">Selecciona la fecha:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="hour">Selecciona la hora:</label>
+        <select id="hour" name="hour" required>
+            <option value="18:00">18:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+            <!-- Añade más opciones según sea necesario -->
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="response-message"></div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const date = document.getElementById('date').value;
+            const hour = document.getElementById('hour').value;
+
+            // Simulación de envío de formulario
+            simulateFormSubmission(date, hour);
+        }
+
+        function simulateFormSubmission(date, hour) {
+            const responseMessage = document.getElementById('response-message');
+            responseMessage.innerHTML = 'Gracias por enviar la petición. Su mujer le contestará en breve ;).';
+        }
+    </script>
+</body>
+</html>
+
